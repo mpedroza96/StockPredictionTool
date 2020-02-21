@@ -42,7 +42,7 @@ def stockPlot():
 
 def stockTable():
     stock = entry.get()
-    Tol.Tool.stockPlot(Tol.Tool.stockQuote(stock))
+    Tol.Tool.stockTable(Tol.Tool.stockQuote(stock))
 
 def trainModel():
     stock = entry.get()
@@ -66,7 +66,7 @@ def prediction():
 
 
 #Buttons
-button1 = Button(ventana, text="Stock closing price table")
+button1 = Button(ventana, text="Stock closing price table", command=stockTable)
 button1.grid(row=6, column=1)
 
 button2 = Button(ventana, text="Stock closing price plot", command=stockPlot)
@@ -81,8 +81,9 @@ button4.grid(row=9, column=1)
 button5 = Button(ventana, text="Prediction closing price plot (Historical Data)", command=predictedPlot)
 button5.grid(row=9, column=3)
 
-button6 = Button(ventana, text="Predicted Closing Price for Tomorrow", command=prediction)
+button6 = Button(ventana, text="Predicted closing price for tomorrow", command=prediction)
 button6.grid(row=10, column=2)
 
 #Run interface
 ventana.mainloop()
+
