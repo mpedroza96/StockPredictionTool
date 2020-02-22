@@ -129,6 +129,27 @@ class Tool:
             plt.legend(['Data used for training model', 'Real Value', 'Predictions'], loc='lower right')
             plt.show()
 
+
+    # Show plot of stock prices
+    def predictionTable():
+        if (Tool.data is None or Tool.predictionModel is None or Tool.trainingDataLen is None):
+            print('Train model before plot')
+        else:
+            table_data = []
+            fig = plt.figure(dpi=100)
+            ax = fig.add_subplot(1, 1, 1)
+
+            for n in range(20):
+                date = datetime.date(datetime.now() - timedelta(days=n))
+                table_data.append([date, Tool.predictionModel[-(n + 1)]])
+
+            table = ax.table(cellText=table_data, loc='center', colLabels=("Date", "Closing Price"))
+            table.set_fontsize(10)
+            table.scale(1, 1.3)
+            ax.axis('off')
+            plt.show()
+
+
     def futurePrediction():
         lastDays = Tool.data[-60:].values
         scaler = MinMaxScaler(feature_range=(0, 1))

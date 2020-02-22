@@ -56,11 +56,10 @@ def predictedPlot():
 
 def predictedTable():
     stock = entry.get()
-    Tol.Tool.predictionPlot()
+    Tol.Tool.predictionTable()
 
 def prediction():
-    stock = entry.get()
-    labelE = Label(ventana, text=("Predicted Stock Price", round(Tol.Tool.futurePrediction(), 2)))
+    labelE = Label(ventana, text=("Predicted Stock Price", list((Tol.Tool.futurePrediction())[0])))
     labelE.configure(background="SkyBlue4", font=('helvetica', 10))
     labelE.grid(row=11, column=2)
 
