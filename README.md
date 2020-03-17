@@ -6,4 +6,4 @@ Clone or download the project.
 
 Located inside the project file, run ```pip install -r requirements.txt``` (Python 2) ```pip3 install -r requirements.txt``` (Python 3). 
 
-Finally run the file interface.py. 
+Finally run the file Interface.py. 
